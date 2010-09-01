@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<script type="text/javascript" src="ASCIIMathML.js"></script>
+	
+	<style>
+	body { width: 40em; }
+	
+	ol li { margin-bottom: 2em; }
+	
+	ol ul { margin-top: 1em;
+			margin-bottom: 1.8em;}
+	p { margin-top: 0.3em;
+		margin-bottom: 0.3em; }
+	
+	</style>
+	
+	<script type="text/javascript">
+		window.onload = function() {
+			var pre_elements = document.getElementsByTagName("pre");
+			
+			for (var i=0; i < pre_elements.length; i++) {
+				var pre = pre_elements[i];
+				var paragraphs = pre.innerHTML.split('\n\n');
+				
+				for ( paragraph_i in paragraphs ) {
+					var p = document.createElement("p");
+					p.innerHTML = paragraphs[paragraph_i];
+					pre.parentNode.insertBefore(p, pre);
+					
+				}
+				
+				pre.style.display = "none";
+			}
+			
+			
+		}
+	</script>
+	</head>
+	
+	<body>
+		<header>
+			<h1>Tietorakenteet, laskuharjoitus 1, 19.-22.1</h1>
+			<h2>Huom: laskarit alkavat jo ensimmäisellä luentoviikolla</h2>
+		</header>
+
+		<ol>
+			<li>Halutaan todistaa, että oletuksesta $A$ seuraa väite $B$ eli propositiologiikan merkinnöin $A \rightarrow B$. Todistamiseen on useita erilaisia tekniikoita. Se, mikä kulloinkin sopii parhaiten, riippuu tilanteesta.
+				
+				<ul>
+					<li>
+						<pre><em>Deduktiivisessa todistuksessa</em>, jota kutsutaan myös suoraksi todistukseksi, oletetaan $A$ ja näytetään, että tästä seuraa $B$.
+						
+						Esim. Olkoon $x \in N$ pariton.  Väite: $x^2$ on pariton.
+						
+						Tod.:  Jos $x \in N$ on pariton (oletus), niin $x=2k+1$ jollain $k \in N$ (parittomuuden määritelmä). Silloin $x^2= 4k^2+4k+1 = 2(2k^2+2k)+1$, eli $x^2$ on pariton. $~\Box $
+						</pre>
+					</li>
+					
+					<li><pre><em>Kontrapositiivisessa todistuksessa</em> näytetään että oletuksesta ei $B$ seuraa ei $A$, eli että $\lnot B \rightarrow \lnot A$. 
+
+						Esim. Väite: Jos $x>0$ on irrationaaliluku, niin $\sqrt{x}$ on irrationaaliluku.
+						
+						Tod.: Osoitetaan, että jos $\sqrt{x}$ on rationaaliluku, niin $x$ on rationaaliluku. Siis $\sqrt{x}=p/q$, joillakin $p, q \in Z, q \neq 0$, joten $x=\frac{p^2}{q^2}$ ja $p^2, q^2 \in Z, q^2 \neq 0$. $\Box$
+						</pre>
+					</li>
+				</ul>
+					
+				<pre>Perustele sekä matemaattisesti että maalaisjärjen tasolla miksi kontrapositiivinen ja vastaväitetodistus ovat matemaattisesti hyväksyttävä tapa todistaa $A --> B$.
+				
+				Perustele myös miksi riittää näyttää että  $A \rightarrow B$ ja $B \rightarrow A$ jos halutaan todistaa että väittämät $A$ ja $B$ ovat yhtäpitävät eli $A \leftrightarrow B$.
+
+				Kurssin Matematiikka tutuksi viikon 6 materiaali voi auttaa asiaan <a href="http://wiki.helsinki.fi/display/mathstatKurssit/MaTukurssisivu">http://wiki.helsinki.fi/display/mathstatKurssit/MaTukurssisivu</a>
+
+				Ylläolevista erityisesti <strong>vastaväitetodistus on kurssin aikana aktiivisessa käytössä</strong>, eli vaikka tehtävänanto on pitkä, lue se huolellisesti ja <strong>yritä sisäistää todistustekniikat mahdollisimman hyvin</strong>
+				</pre>
+			</li>
+			
+			
+			<li><pre>Vastaväitetodistuksen lisäksi <strong>induktiotodistus</strong> on Tietorakenteissa avainasemassa. 
+			
+				Tirassa hyödynnetään usein erilaisia summakaavoja. Esim. kaava $\sum_{i=0}^{n} i = 1+2+3+...+n = \frac{n(n+1)}{2}$ on kovassa käytössä. Summakaava on yleensä helpointa todistaa induktiolla.
+			
+				</pre>
+			</li>
+			
+		</ol>
+	
+	</body>
+
+</html>
